@@ -7,12 +7,10 @@ declare(strict_types=1);
 
 namespace Magento\Tinymce3\Model\Config\Gallery;
 
-use Magento\Ui\Component\Form\Element\DataType\Media\OpenDialogUrl;
-
 /**
  * Class Config adds information about required configurations to display media gallery of tinymce3 editor
  *
- * @deprecated 100.3.0 use \Magento\Cms\Model\Wysiwyg\DefaultConfigProvider instead
+ * @deprecated use \Magento\Cms\Model\Wysiwyg\DefaultConfigProvider instead
  */
 class Config implements \Magento\Framework\Data\Wysiwyg\ConfigProviderInterface
 {
@@ -22,20 +20,12 @@ class Config implements \Magento\Framework\Data\Wysiwyg\ConfigProviderInterface
     private $backendUrl;
 
     /**
-     * @var OpednDialogUrl
-     */
-    private $openDialogUrl;
-
-    /**
      * @param \Magento\Backend\Model\UrlInterface $backendUrl
-     * @param OpenDialogUrl $openDialogUrl
      */
     public function __construct(
-        \Magento\Backend\Model\UrlInterface $backendUrl,
-        OpenDialogUrl $openDialogUrl
+        \Magento\Backend\Model\UrlInterface $backendUrl
     ) {
         $this->backendUrl = $backendUrl;
-        $this->openDialogUrl = $openDialogUrl;
     }
 
     /**
@@ -49,7 +39,7 @@ class Config implements \Magento\Framework\Data\Wysiwyg\ConfigProviderInterface
         $config->addData(
             [
                 'add_images' => true,
-                'files_browser_window_url' => $this->backendUrl->getUrl($this->openDialogUrl->get()),
+                'files_browser_window_url' => $this->backendUrl->getUrl('cms/wysiwyg_images/index'),
             ]
         );
 
