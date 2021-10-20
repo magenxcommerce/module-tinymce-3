@@ -1,0 +1,33 @@
+{
+    "name": "magenxcommerce/module-tinymce-3",
+    "description": "N/A",
+    "require": {
+        "php": "~7.1.3||~7.2.0||~7.3.0",
+        "magenxcommerce/framework": "102.0.*",
+        "magenxcommerce/module-backend": "101.0.*",
+        "magenxcommerce/module-ui": "101.1.*",
+        "magenxcommerce/module-variable": "100.3.*",
+        "magenxcommerce/module-widget": "101.1.*",
+        "magenxcommerce/module-cms": "103.0.*"
+    },
+    "suggest": {
+        "magenxcommerce/module-cms": "103.0.*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\Tinymce3\\": ""
+        }
+    },
+    "version": "100.3.4",
+    "replace": {
+        "magento/module-tinymce-3": "*"
+    }
+}
